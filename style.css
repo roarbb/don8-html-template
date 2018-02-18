@@ -8,7 +8,7 @@
   --color-red-darker: rgb(197, 62, 29);
   --header-height: 60px;
   --footer-height: 70px;
-  --cta-circle-width: 90px;
+  --cta-circle-width: 80px;
   --side-padding: 20px;
 }
 
@@ -147,6 +147,10 @@ a:hover {
   width: var(--cta-circle-width);
   height: var(--cta-circle-width);
   font-size: 45px;
+}
+
+.circle-bg img {
+  width: 100%;
 }
 
 @media (max-width: 500px) {
