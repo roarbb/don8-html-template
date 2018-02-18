@@ -21,9 +21,11 @@ body {
   min-height: 100vh; /*calc(100vh - var(--top-bar-height));*/
   width: 100%;
   margin: 0;
-  border-top: var(--top-bar-height) solid var(--color-red);
   font-family: "Roboto condensed", sans-serif;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(assets/bg-new-york.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 button {
@@ -73,12 +75,14 @@ a:hover {
   align-items: center;
   grid-gap: 10px;
   padding: 0 var(--side-padding);
+  border-top: var(--top-bar-height) solid var(--color-red);
+  background: white;
 }
 
 @media (max-width: 600px) {
   .header {
     grid-auto-flow: row;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
 
   body {
@@ -97,9 +101,6 @@ a:hover {
 .content {
   display: grid;
   grid-template-rows: 1fr var(--footer-height);
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(assets/bg-new-york.jpg) no-repeat center center;
-  background-size: cover;
   color: var(--color-white);
   font-size: 1.3em;
   font-weight: 700;
@@ -142,7 +143,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   background: var(--color-red);
-  border-radius: 50%;
+  border-radius: 0 50% 50%;
   width: var(--cta-circle-width);
   height: var(--cta-circle-width);
   font-size: 45px;
