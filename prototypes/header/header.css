@@ -1,0 +1,11 @@
+.header {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+}
+
+@media (max-width: 600px) {
+    .header {
+        grid-auto-flow: row;
+    }
+}

@@ -1,0 +1,51 @@
+:root {
+    --cta-circle-width: 90px;
+}
+
+.main {
+    height: 100vh; /* no need in production */
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.cta-wrap {
+    display: grid;
+    grid-auto-flow: column;
+    margin-top: 30px;
+    grid-gap: 20px;
+}
+
+.cta {
+    display: grid;
+    justify-items: center;
+    grid-gap: 5px;
+}
+
+.circle-bg {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: rgba(165, 26, 26, 0.918);
+    border-radius: 50%;
+    width: var(--cta-circle-width);
+    height: var(--cta-circle-width);
+    font-size: 45px;
+}
+
+@media (max-width: 500px) {
+    .cta-wrap {
+        grid-auto-flow: row;
+        grid-gap: 10px;
+    }
+
+    .cta {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+    }
+
+    .circle-bg {
+        grid-row: span 2;
+    }
+}
