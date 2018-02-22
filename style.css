@@ -13,12 +13,22 @@
 }
 
 /* Basic elements */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
 
 body {
+  min-height: 100vh;
   --top-bar-height: 4px;
   display: grid;
   grid-template-rows: var(--header-height) 1fr;
-  min-height: 100vh; /*calc(100vh - var(--top-bar-height));*/
+  min-height: calc(100vh - var(--top-bar-height));
   width: 100%;
   margin: 0;
   font-family: "Roboto condensed", sans-serif;
@@ -26,6 +36,12 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(assets/bg-new-york.jpg) no-repeat center center fixed;
   background-size: cover;
+}
+
+@media (max-width: 500px) {
+  body {
+    background-size: auto 120%;
+  }
 }
 
 button {
@@ -82,7 +98,7 @@ a:hover {
 @media (max-width: 600px) {
   .header {
     grid-auto-flow: row;
-    padding-bottom: 10px;
+    padding: 10px var(--side-padding);
   }
 
   body {
@@ -114,7 +130,7 @@ a:hover {
   text-align: center;
   text-transform: uppercase;
   border-bottom: 1px solid var(--color-white);
-  margin: 0 var(--side-padding);
+  margin: 20px var(--side-padding) 0 var(--side-padding);
 }
 
 .main button {
@@ -128,7 +144,7 @@ a:hover {
 .cta-wrap {
   display: grid;
   grid-auto-flow: column;
-  margin-top: 50px;
+  margin: 50px 0;
   grid-gap: 20px;
 }
 
@@ -219,6 +235,12 @@ a:hover {
 
   .footer-sub .right {
     justify-self: end;
+  }
+
+  .footer-main > *,
+  .footer-sub > * {
+    text-align: center;
+    align-items: center;
   }
 }
 
