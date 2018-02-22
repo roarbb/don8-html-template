@@ -35,13 +35,7 @@ body {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(assets/bg-new-york.jpg) no-repeat center center fixed;
-  background-size: cover;
-}
-
-@media (max-width: 500px) {
-  body {
-    background-size: auto 120%;
-  }
+  background-size: auto 120%;
 }
 
 button {
