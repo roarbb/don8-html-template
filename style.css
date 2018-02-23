@@ -10,9 +10,11 @@
   --footer-height: 70px;
   --cta-circle-width: 80px;
   --side-padding: 20px;
+  --top-border-height: 4px;
 }
 
 /* Basic elements */
+
 *,
 *:before,
 *:after {
@@ -24,18 +26,13 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  --top-bar-height: 4px;
   display: grid;
   grid-template-rows: var(--header-height) 1fr;
-  min-height: calc(100vh - var(--top-bar-height));
+  min-height: calc(100vh - var(--top-border-height));
   width: 100%;
   margin: 0;
   font-family: "Roboto condensed", sans-serif;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(assets/bg-new-york.jpg) no-repeat center center fixed;
-  background-size: auto 120%;
 }
 
 button {
@@ -76,6 +73,33 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Cover background image */
+
+img.bg {
+  z-index: -5000;
+  filter: brightness(80%);
+
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
 /* Header */
 
 .header {
@@ -85,7 +109,7 @@ a:hover {
   align-items: center;
   grid-gap: 10px;
   padding: 0 var(--side-padding);
-  border-top: var(--top-bar-height) solid var(--color-red);
+  border-top: var(--top-border-height) solid var(--color-red);
   background: white;
 }
 
@@ -225,10 +249,6 @@ a:hover {
   .footer .left,
   .footer .right {
     justify-self: stretch;
-  }
-
-  .footer-sub .right {
-    justify-self: end;
   }
 
   .footer-main > *,
